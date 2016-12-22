@@ -11,9 +11,17 @@ func PointerToString(s *string) string {
 }
 
 //PointerToBool transform a pointer to its bool value
-func PointerToBool(s *bool) bool {
-	if s == nil {
+func PointerToBool(b *bool) bool {
+	if b == nil {
 		return false
 	}
-	return *(*bool)(unsafe.Pointer(s))
+	return *(*bool)(unsafe.Pointer(b))
+}
+
+//PointerToInt transform a pointer to its int value
+func PointerToInt(i *int) int {
+	if i == nil {
+		return 0
+	}
+	return *(*int)(unsafe.Pointer(i))
 }
