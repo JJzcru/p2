@@ -25,3 +25,11 @@ func Int(i *int) int {
 	}
 	return *(*int)(unsafe.Pointer(i))
 }
+
+//Time transform a pointer to its Time value
+func Time(t *time.Time) time.Time {
+	if t == nil {
+		return nil
+	}
+	return *(*time.Time)(unsafe.Pointer(t))
+}
