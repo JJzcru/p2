@@ -1,6 +1,9 @@
 package p2
 
-import "unsafe"
+import (
+	"time"
+	"unsafe"
+)
 
 //String transform a pointer to its string value
 func String(s *string) string {
@@ -29,7 +32,7 @@ func Int(i *int) int {
 //Time transform a pointer to its Time value
 func Time(t *time.Time) time.Time {
 	if t == nil {
-		return nil
+		return time.Time{}
 	}
 	return *(*time.Time)(unsafe.Pointer(t))
 }
